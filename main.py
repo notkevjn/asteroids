@@ -6,12 +6,16 @@ print ("Starting Asteroids!")
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    Clock = pygame.time.Clock
+    dt = 0
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+            
         screen.fill((0,0,0))
         pygame.display.flip()
+        dt = Clock.tick(60)
 
 
 if __name__ == "__main__":
